@@ -4,7 +4,7 @@ const BACKEND_URL = import.meta.env.VITE_BACK_URL;
 
 export const register = async (formData) => {
     try {
-        const res = await fetch(`${BACKEND_URL}user/register/`, {
+        const res = await fetch(`${BACKEND_URL}/user/register/`, {
             method: "POST",
             headers: {"Content-Type": 'application/json'},
             body: JSON.stringify(formData)
@@ -36,7 +36,7 @@ export const getUser = () => {
 
 export const signin = async (formData) => {
     try {
-      const res = await fetch(`${BACKEND_URL}user/token/`, {
+      const res = await fetch(`${BACKEND_URL}/user/token/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -48,7 +48,7 @@ export const signin = async (formData) => {
       }
   
       const json = await res.json();
-      localStorage.setItem("token", json.access); // Store the access token
+      localStorage.setItem("token", json.access);
       return json;
     } catch (err) {
       console.error("Error during sign-in:", err);

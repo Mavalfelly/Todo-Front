@@ -1,4 +1,4 @@
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_BACK_URL;
 const TOKEN_KEY = "token"; 
 
 const getAuthHeader = () => {
@@ -147,7 +147,6 @@ export const deleteTodo = async (masterListId, todoId) => {
     }
 };
 
-// Mark a todo as completed
 export const markTodoComplete = async (masterListId, todoId, isCompleted) => {
     try {
         const res = await fetch(`${BACKEND_URL}/api/masterlists/${masterListId}/todos/${todoId}/`, {
