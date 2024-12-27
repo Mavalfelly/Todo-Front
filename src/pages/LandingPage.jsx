@@ -1,39 +1,40 @@
-/* eslint-disable react/no-unescaped-entities */
 import { Link } from "react-router-dom";
 import Navbar from "../components/NavBar";
 
 const LandingPage = () => {
   return (
     <>
-        <Navbar/>
-        <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center">
-        <main className="flex-1 flex flex-col items-center justify-center text-center px-4">
-            <h2 className="text-4xl font-extrabold text-gray-800 mb-4">
-            Welcome to Matt's TODO app
+      <Navbar />
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+        <main className="flex-1 flex items-center justify-center text-center px-4 py-20">
+          <div className="animate-fade-in-down">
+            <h2 className="text-6xl font-extrabold text-white mb-6 animate-title">
+              Welcome to TaskFlow
             </h2>
-            <p className="text-lg text-gray-600 max-w-lg mb-6">
-            Discover a better way to manage your tasks and objectives.                                    Sign up
-            today and start organizing your life!
+            <p className="text-xl text-white/90 max-w-2xl mb-12 mx-auto leading-relaxed">
+              Transform your productivity with our elegant task management solution.
+              Start organizing your life with style and purpose today!
             </p>
-            <div className="flex space-x-4">
-            <Link
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link
                 to="/register"
-                className="bg-blue-600 text-white px-6 py-3 rounded-md text-lg shadow hover:bg-blue-700"
-            >
+                className="px-8 py-4 bg-white text-purple-600 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              >
                 Get Started
-            </Link>
-            <Link
+              </Link>
+              <Link
                 to="/login"
-                className="bg-gray-100 text-gray-800 px-6 py-3 rounded-md text-lg shadow hover:bg-gray-200"
-            >
+                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-purple-600 transform hover:scale-105 transition-all duration-300"
+              >
                 Sign In
-            </Link>
+              </Link>
             </div>
+          </div>
         </main>
-        <footer className="w-full bg-gray-100 py-4 text-center text-gray-500">
-            &copy; {new Date().getFullYear()} Matt's Todos. All rights reserved. Made with React, Django, Tailwind, and Caffine.
+        <footer className="w-full bg-white/10 backdrop-blur-md py-6 text-center text-white/80">
+          &copy; {new Date().getFullYear()} TaskFlow. All rights reserved. Made with ❤️ and Caffeine.
         </footer>
-        </div>
+      </div>
     </>
   );
 };
