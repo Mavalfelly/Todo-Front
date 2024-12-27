@@ -5,7 +5,7 @@ import LoginPage from "./pages/LoginPage";
 import LandingPage from "./pages/LandingPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import NavBar2 from "./components/Nav2";
-import Dashboard from "./pages/dashboard";
+import Dashboard from "./pages/Dashboard";
 import MasterListInfo from "./pages/MasterInfo";
 const App = () => {
     return (
