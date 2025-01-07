@@ -130,13 +130,13 @@ const MasterListInfo = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50">
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50 dark:from-gray-900 dark:to-purple-900">
             <div className="container mx-auto px-4 py-8">
                 <div className="mb-8 animate-fade-in-down">
-                    <h1 className="text-4xl font-bold text-gray-800 mb-2">
+                    <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-2">
                         {list ? list.title || list.name || "Unnamed List" : "Loading..."}
                     </h1>
-                    <p className="text-gray-600">Manage your tasks and track progress</p>
+                    <p className="text-gray-600 dark:text-gray-300">Manage your tasks and track progress</p>
                 </div>
 
                 <div className="flex justify-between items-center mb-8">
@@ -145,13 +145,13 @@ const MasterListInfo = () => {
                             id="filter"
                             value={filter}
                             onChange={handleFilterChange}
-                            className="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 leading-tight focus:outline-none focus:border-purple-500 transition-colors duration-200"
+                            className="appearance-none bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-2 pr-8 leading-tight focus:outline-none focus:border-purple-500 dark:focus:border-purple-400 text-gray-700 dark:text-gray-200 transition-colors duration-200"
                         >
                             <option value="all">All Tasks</option>
                             <option value="newest">Newest First</option>
                             <option value="oldest">Oldest First</option>
                         </select>
-                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-200">
                             <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                 <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
                             </svg>
@@ -159,26 +159,26 @@ const MasterListInfo = () => {
                     </div>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-lg p-6 mb-8 animate-fade-in-down">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-4">Add New Task</h2>
+                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 mb-8 animate-fade-in-down">
+                    <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Add New Task</h2>
                     <div className="flex gap-4">
                         <input
                             type="text"
                             placeholder="Task Name"
                             value={newTodo}
                             onChange={(e) => setNewTodo(e.target.value)}
-                            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-200"
+                            className="flex-1 px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 text-gray-700 dark:text-gray-200 transition-colors duration-200"
                         />
                         <input
                             type="text"
                             placeholder="Description"
                             value={newDescription}
                             onChange={(e) => setNewDescription(e.target.value)}
-                            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-200"
+                            className="flex-1 px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 text-gray-700 dark:text-gray-200 transition-colors duration-200"
                         />
                         <button
                             onClick={handleCreateTodo}
-                            className="bg-purple-600 text-white px-6 py-2 rounded-lg font-medium transform hover:scale-105 transition-all duration-200"
+                            className="bg-purple-600 dark:bg-purple-700 text-white px-6 py-2 rounded-lg font-medium transform hover:scale-105 transition-all duration-200"
                         >
                             Add Task
                         </button>
@@ -189,7 +189,7 @@ const MasterListInfo = () => {
                     {filteredTodos.map((todo) => (
                         <div
                             key={todo.id}
-                            className="bg-white rounded-xl shadow-lg p-6 transform hover:scale-102 transition-all duration-200"
+                            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform hover:scale-102 transition-all duration-200"
                         >
                             {editTodoId === todo.id ? (
                                 <div className="space-y-4">
@@ -197,18 +197,18 @@ const MasterListInfo = () => {
                                         type="text"
                                         value={editTodoTitle}
                                         onChange={(e) => setEditTodoTitle(e.target.value)}
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-200"
+                                        className="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 text-gray-700 dark:text-gray-200 transition-colors duration-200"
                                     />
                                     <input
                                         type="text"
                                         value={editTodoDescription}
                                         onChange={(e) => setEditTodoDescription(e.target.value)}
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-200"
+                                        className="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 text-gray-700 dark:text-gray-200 transition-colors duration-200"
                                     />
                                     <div className="flex gap-2">
                                         <button
                                             onClick={handleUpdateTodo}
-                                            className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-200"
+                                            className="bg-purple-600 dark:bg-purple-700 text-white px-4 py-2 rounded-lg hover:bg-purple-700 dark:hover:bg-purple-800 transition-colors duration-200"
                                         >
                                             Save Changes
                                         </button>
@@ -218,7 +218,7 @@ const MasterListInfo = () => {
                                                 setEditTodoTitle("");
                                                 setEditTodoDescription("");
                                             }}
-                                            className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors duration-200"
+                                            className="bg-gray-500 dark:bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-600 dark:hover:bg-gray-700 transition-colors duration-200"
                                         >
                                             Cancel
                                         </button>
@@ -227,7 +227,7 @@ const MasterListInfo = () => {
                             ) : (
                                 <div>
                                     <div className="flex justify-between items-start mb-2">
-                                        <h3 className={`text-xl font-bold ${todo.completed ? "line-through text-gray-500" : "text-gray-800"}`}>
+                                        <h3 className={`text-xl font-bold ${todo.completed ? "line-through text-gray-500 dark:text-gray-400" : "text-gray-800 dark:text-white"}`}>
                                             {todo.title}
                                         </h3>
                                         <div className="flex gap-2">
@@ -237,7 +237,7 @@ const MasterListInfo = () => {
                                                     setEditTodoTitle(todo.title);
                                                     setEditTodoDescription(todo.description);
                                                 }}
-                                                className="px-3 py-1 bg-purple-100 text-purple-600 rounded-md hover:bg-purple-200 transition-colors duration-200"
+                                                className="px-3 py-1 bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400 rounded-md hover:bg-purple-200 dark:hover:bg-purple-800/50 transition-colors duration-200"
                                             >
                                                 Edit
                                             </button>
@@ -245,24 +245,24 @@ const MasterListInfo = () => {
                                                 onClick={() => handleMarkComplete(todo.id, !todo.completed)}
                                                 className={`px-3 py-1 rounded-md transition-colors duration-200 ${
                                                     todo.completed 
-                                                        ? "bg-yellow-100 text-yellow-600 hover:bg-yellow-200"
-                                                        : "bg-green-100 text-green-600 hover:bg-green-200"
+                                                        ? "bg-yellow-100 dark:bg-yellow-900/50 text-yellow-600 dark:text-yellow-400 hover:bg-yellow-200 dark:hover:bg-yellow-800/50"
+                                                        : "bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 hover:bg-green-200 dark:hover:bg-green-800/50"
                                                 }`}
                                             >
                                                 {todo.completed ? "Mark Incomplete" : "Mark Complete"}
                                             </button>
                                             <button
                                                 onClick={() => handleDeleteTodo(todo.id)}
-                                                className="px-3 py-1 bg-red-100 text-red-600 rounded-md hover:bg-red-200 transition-colors duration-200"
+                                                className="px-3 py-1 bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 rounded-md hover:bg-red-200 dark:hover:bg-red-800/50 transition-colors duration-200"
                                             >
                                                 Delete
                                             </button>
                                         </div>
                                     </div>
-                                    <p className="text-gray-600 mb-2">
+                                    <p className="text-gray-600 dark:text-gray-300 mb-2">
                                         {todo.description || "No description provided"}
                                     </p>
-                                    <p className="text-sm text-gray-500">
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">
                                         Created: {new Date(todo.created_at).toLocaleString()}
                                     </p>
                                 </div>

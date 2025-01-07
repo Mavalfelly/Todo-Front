@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import ThemeToggle from "./Toggle";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white/10 backdrop-blur-md fixed w-full z-50">
+    <nav className="bg-white/10 dark:bg-gray-900/90 backdrop-blur-md fixed w-full z-50">
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <div className="text-2xl font-bold text-white">
@@ -10,7 +11,7 @@ const Navbar = () => {
               TaskFlow
             </Link>
           </div>
-          <div className="flex space-x-6">
+          <div className="flex items-center space-x-6">
             <Link
               to="/"
               className="text-white hover:text-purple-200 transition-colors duration-200"
@@ -29,6 +30,7 @@ const Navbar = () => {
             >
               Register
             </Link>
+            <ThemeToggle />
           </div>
         </div>
       </div>
